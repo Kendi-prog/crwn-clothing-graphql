@@ -18,20 +18,20 @@ const GET_CATEGORY = gql`
 
 `
 
-const SET_CATEGORY = gql`
-  mutation($category : Category!) {
-    addCategory(category: $category) {
-      id
-      title
-      item {
-        id
-        name
-        price
-        imageUrl
-        }
-      }
-    }
-`
+// const SET_CATEGORY = gql`
+//   mutation($category : Category!) {
+//     addCategory(category: $category) {
+//       id
+//       title
+//       item {
+//         id
+//         name
+//         price
+//         imageUrl
+//         }
+//       }
+//     }
+// `
 
 const Category = () => {
   const { category } = useParams();
@@ -41,9 +41,9 @@ const Category = () => {
     }
   });
 
-  const [addCategory, {loading, error, data}] = useMutation(SET_CATEGORY);
+  // const [addCategory, {loading, error, data}] = useMutation(SET_CATEGORY);
 
-  addCategory({ variable: { category: categoryObject } })
+  // addCategory({ variable: { category: categoryObject } })
 
   useEffect(() => {
     if(data) {
